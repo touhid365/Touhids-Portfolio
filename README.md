@@ -66,10 +66,6 @@ cp .env.local.example .env.local
 npm run dev
 \`\`\`
 
-## 🔑 Admin Access
-
-- Email: admin@example.com
-- Password: admin123
 
 ## 📁 Project Structure
 

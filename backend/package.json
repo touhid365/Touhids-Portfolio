@@ -11,8 +11,7 @@
     "prisma:migrate": "prisma migrate deploy",
     "prisma:push": "prisma db push",
     "prisma:studio": "prisma studio",
-    "seed": "ts-node src/utils/seed.ts",
-    "postinstall": "npm run build"
+    "seed": "ts-node src/utils/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.0.0",

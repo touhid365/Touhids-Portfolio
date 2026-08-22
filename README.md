@@ -115,3 +115,36 @@ MIT © Touhid Hossain
 - GitHub: [touhid365](https://github.com/touhid365)
 - LinkedIn: [Touhid Hossain](https://www.linkedin.com/in/touhid-hossain-1155602bb/)
 - X: [@ami_touhid_](https://x.com/ami_touhid_)" > README.md
+
+portfolio/
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── routes/
+│   │   ├── middleware/
+│   │   ├── utils/
+│   │   └── index.ts
+│   ├── prisma/
+│   │   └── schema.prisma
+│   └── package.json
+├── frontend/
+│   ├── app/
+│   │   ├── (website)/
+│   │   ├── admin/
+│   │   ├── components/
+│   │   └── api/
+│   ├── public/
+│   │   └── images/
+│   └── package.json
+├── .gitignore
+├── README.md
+└── package.json
+
+
+
+![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38B2AC?logo=tailwindcss)
+![Node.js](https://img.shields.io/badge/Node.js-18-green?logo=node.js)
+![Prisma](https://img.shields.io/badge/Prisma-5.0-2D3748?logo=prisma)
+![License](https://img.shields.io/badge/License-MIT-yellow)

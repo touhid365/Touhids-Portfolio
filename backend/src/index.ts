@@ -25,7 +25,7 @@ app.use(cors({
 app.use(express.json({ limit: '10mb' }))
 app.use(express.urlencoded({ extended: true, limit: '10mb' }))
 
-// Request logging middleware - fixed unused 'res' parameter
+// Request logging middleware
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`)
   next()
@@ -36,7 +36,7 @@ app.use('/api/projects', projectRoutes)
 app.use('/api/contact', contactRoutes)
 app.use('/api/auth', authRoutes)
 
-// Health check - fixed unused 'req' parameter
+// Health check
 app.get('/api/health', async (_req, res) => {
   try {
     // Test database connection
@@ -57,7 +57,7 @@ app.get('/api/health', async (_req, res) => {
   }
 })
 
-// Error handling middleware - fixed all issues
+// Error handling middleware
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
   console.error('Error:', err.stack)
   
@@ -97,7 +97,8 @@ process.on('SIGTERM', async () => {
   process.exit(0)
 })
 
-app.listen(PORT, () => {
+// IMPORTANT: Bind to 0.0.0.0 for Render
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Server running on port ${PORT}`)
   console.log(`📍 API URL: http://localhost:${PORT}/api`)
   console.log(`📊 Health check: http://localhost:${PORT}/api/health`)

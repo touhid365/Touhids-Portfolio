@@ -1,23 +1,15 @@
-import Hero from '@/app/components/sections/Hero'
-import About from '@/app/components/sections/About'
-import Projects from '@/app/components/sections/Projects'
-import Contact from '@/app/components/sections/Contact'
+import Hero from '@/components/sections/Hero'
+import About from '@/components/sections/About'
+import Projects from '@/components/sections/Projects'
+import Contact from '@/components/sections/Contact'
 
 export default function Home() {
   return (
     <>
-      <section id="home">
-        <Hero />
-      </section>
-      <section id="about">
-        <About />
-      </section>
-      <section id="projects">
-        <Projects />
-      </section>
-      <section id="contact">
-        <Contact />
-      </section>
+      <section id="home"><Hero /></section>
+      <section id="about"><About /></section>
+      <section id="projects"><Projects /></section>
+      <section id="contact"><Contact /></section>
     </>
   )
 }

@@ -4,6 +4,7 @@
   "description": "Backend API for portfolio website",
   "main": "dist/index.js",
   "scripts": {
+    "prebuild": "node scripts/baseline-migration.js",
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",

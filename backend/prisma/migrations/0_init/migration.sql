@@ -1,0 +1,2 @@
+-- Baseline migration for the existing production database.
+-- This file intentionally contains no schema changes.

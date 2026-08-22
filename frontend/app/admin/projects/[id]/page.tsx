@@ -4,9 +4,11 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import ProjectForm from '@/app/components/admin/ProjectForm'
 
+type ProjectFormData = Parameters<typeof ProjectForm>[0]['initialData']
+
 export default function EditProject() {
   const params = useParams()
-  const [projectData, setProjectData] = useState(null)
+  const [projectData, setProjectData] = useState<ProjectFormData | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -42,5 +44,5 @@ export default function EditProject() {
     )
   }
 
-  return <ProjectForm initialData={projectData} isEdit={true} />
+  return <ProjectForm initialData={projectData ?? undefined} isEdit={true} />
 }

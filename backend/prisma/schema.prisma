@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  title       String   @db.VarChar(255)
+  description String   @db.Text
+  features    String[] @default([])  // ← Add this line
+  techStack   String[] @default([])
+  imageUrl    String   @db.VarChar(500)
+  screenshots String[] @default([])
+  liveUrl     String?  @db.VarChar(500)
+  githubUrl   String?  @db.VarChar(500)
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now()) @db.Timestamp(6)
+  updatedAt   DateTime @updatedAt @db.Timestamp(6)
+
+  @@index([createdAt])
+  @@index([featured])
+}
+
+model Contact {
+  id        String   @id @default(cuid())
+  name      String   @db.VarChar(100)
+  email     String   @db.VarChar(255)
+  message   String   @db.Text
+  status    String   @default("PENDING") @db.VarChar(50)
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+
+  @@index([createdAt])
+  @@index([status])
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique @db.VarChar(255)
+  password  String   @db.VarChar(255)
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+
+  @@index([email])
+}

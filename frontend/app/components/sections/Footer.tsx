@@ -108,6 +108,7 @@ export default function Footer() {
 
           <button
             onClick={scrollToTop}
+            suppressHydrationWarning
             className="p-3 bg-blue-500 hover:bg-blue-600 rounded-full transition-colors duration-200 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
             aria-label="Back to top"
           >

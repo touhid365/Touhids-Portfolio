@@ -142,6 +142,7 @@ export default function Contact() {
                 type="text"
                 value={formData.name}
                 onChange={(e) => handleChange('name', e.target.value)}
+                suppressHydrationWarning
                 className={`w-full px-4 py-3 rounded-lg border ${
                   errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                 } bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors`}
@@ -161,6 +162,7 @@ export default function Contact() {
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleChange('email', e.target.value)}
+                suppressHydrationWarning
                 className={`w-full px-4 py-3 rounded-lg border ${
                   errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                 } bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors`}
@@ -180,6 +182,7 @@ export default function Contact() {
                 value={formData.message}
                 onChange={(e) => handleChange('message', e.target.value)}
                 rows={5}
+                suppressHydrationWarning
                 className={`w-full px-4 py-3 rounded-lg border ${
                   errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                 } bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none`}
@@ -197,6 +200,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
+              suppressHydrationWarning
               className="w-full px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (

@@ -15,7 +15,6 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
-      // Add localhost for development
       {
         protocol: 'http',
         hostname: 'localhost',
@@ -23,20 +22,17 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-    // Configure image formats
     formats: ['image/avif', 'image/webp'],
-    // Set device sizes for responsive images
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    // Important for Vercel
-    unoptimized: true,  // ← Add this for Vercel
+    unoptimized: true,
   },
   
-  // Important for Vercel deployment
-  output: 'standalone',  // ← Add this
+  // Remove swcMinify - it's no longer needed in Next.js 16+
+  // swcMinify is now enabled by default
+  output: 'standalone',
   trailingSlash: false,
   reactStrictMode: true,
-  swcMinify: true,
   
   /* config options here */
   experimental: {
